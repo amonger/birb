@@ -82,7 +82,11 @@ function _draw()
    rectfill(camx,camy,camx+127,camy+127,1)
    camera(camx, camy)
    map(0, 0, 0, 0, 128, 32)   
-   spr(mv % 4, x, y, 1, 1, directionLeft)
+   if (dy == 0) then
+     spr(mv % 4, x, y, 1, 1, directionLeft)
+   else
+     spr(16, x, y, 1, 1, directionLeft)
+   end
 end
 __gfx__
 00000000000000000000000000000000000000003333333300000000000000000000000000000000000000000000000000000000000000000000000000000000
