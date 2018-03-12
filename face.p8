@@ -47,6 +47,11 @@ function _update()
         dx = -3
     end
 
+    -- limit max fall speed
+    if dy > 3 then
+        dy = 3
+    end
+
     -- drag
     if ddx == 0 then
         dx *= 0.8
@@ -61,7 +66,7 @@ function _update()
         y = flr(flr(y)/8)*8
       end
    else
-      dy += 0.98
+      dy += 0.8
    end
 
    x+=dx
