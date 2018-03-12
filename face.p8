@@ -66,7 +66,11 @@ function _update()
         y = flr(flr(y)/8)*8
       end
    else
-      dy += 0.8
+      if (btnp(5)) then
+        dy -= 3
+      else
+        dy += 0.8
+      end
    end
 
    x+=dx
