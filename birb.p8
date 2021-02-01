@@ -2,7 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 16
 __lua__
 --function _init()
-    x = 64 
+    x = 64
     y = 48
     dx = 0
     dy = 0
@@ -12,8 +12,8 @@ __lua__
     directionleft=false
 --end
 
-function setdirection() 
-   if (btn(0)) then 
+function setdirection()
+   if (btn(0)) then
       directionleft=true
    end
 
@@ -22,7 +22,7 @@ function setdirection()
    end
 end
 
-function movecamera() 
+function movecamera()
 
 end
 
@@ -76,16 +76,15 @@ function _update()
    x+=dx
    y+=dy
 
-   if (btn(0) or btn(1)) then 
+   if (btn(0) or btn(1)) then
      mv += 5
    end
 end
 
 function _draw()
    cls()
-   rectfill(dx+x-64,dy+y-48,camx+127,camy+127,1)
    camera(dx+x-64, dy+y-48)
-   map(0, 0, 0, 0, 128, 32)   
+   map(0, 0, 0, 0, 128, 32)
    if (dy == 0) then
      spr(mv % 4, x, y, 1, 1, directionleft)
    else
