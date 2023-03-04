@@ -1,5 +1,5 @@
 pico-8 cartridge // http://www.pico-8.com
-version 16
+version 29
 __lua__
 --function _init()
     x = 64
@@ -58,7 +58,7 @@ function _update()
     end
 
    if grounded() then
-      if (btnp(5)) then
+      if (btnp(2)) then
         sfx(0)
         dy=-8
       else
@@ -66,7 +66,7 @@ function _update()
         y = flr(flr(y)/8)*8
       end
    else
-      if (btnp(5)) then
+      if (btnp(2)) then
         dy -= 3
       else
         dy += 0.8
@@ -82,7 +82,7 @@ function _update()
 end
 
 function _draw()
-   cls()
+   cls(12)
    camera(dx+x-64, dy+y-48)
    map(0, 0, 0, 0, 128, 32)
    if (dy == 0) then
